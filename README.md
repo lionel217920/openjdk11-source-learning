@@ -29,3 +29,5 @@ openJDK11源码学习
 cd /Users/lionel/Environment/openjdk/11/openjdk
 make images
 ```
+
+![4](image/屏幕快照%202021-01-25%20下午5.13.16.png)
