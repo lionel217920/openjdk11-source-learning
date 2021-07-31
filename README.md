@@ -40,6 +40,8 @@ make all
 ```
 **make all** - Build all images(product, docs and test)
 
+我的电脑CPU配置： 2.7 GHz Intel Core i7，使用八核编译，13分钟完成。
+
 ```shell
 make images
 ```
