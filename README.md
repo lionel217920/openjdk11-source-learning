@@ -2,9 +2,48 @@
 
 openJDK11源码学习
 
+## 相关网站链接
+
+- [openjdk官网](http://openjdk.java.net/)
+- [openjdk11源码下载](http://jdk.java.net/java-se-ri/11)
+- [openjdkGithub](https://github.com/openjdk)
+- [清华大学openjdk镜像](https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/)
+
 ## 编译JDK
 
-略，有时间补充
+1. 在执行`configure`的时候，如果系统缺失一些编译工具，根据提示缺少什么就安装什么。
+2. 在mac上编译BootJDK要下载mac系统的，可以在清华大学镜像下载。
+3. mac要安装 **Homebrew** 和 **Xcode Command Line Tools**
+
+我的电脑上一些配置版本
+
+|  command  |   version |
+| :-------:  | :--------:|
+| clang --version | Apple LLVM version 10.0.1 (clang-1001.0.46.4) |
+| clang++ --version | Apple LLVM version 10.0.1 (clang-1001.0.46.4) |
+| autoconf --version | autoconf (GNU Autoconf) 2.69 |
+| make --version | GNU Make 3.81 |
+| gcc --version | gcc-7 (Homebrew GCC 7.5.0) 7.5.0 |
+| ccache --version | ccache version 3.7.6 |
+| freetype-config --version | 23.1.17 |
+
+### Running Configure
+
+```shell
+bash configure --with-toolchain-type=clang --with-debug-level=slowdebug --enable-dtrace --with-jvm-variants=server --with-target-bits=64 --enable-ccache --with-num-cores=8 --with-memory-size=8000 --disable-warnings-as-errors --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk --with-boot-jdk=/Users/lionel/Environment/openjdk10/jdk-10.jdk/Contents/Home
+```
+
+### Running Make
+
+```shell
+make all
+```
+**make all** - Build all images(product, docs and test)
+
+```shell
+make images
+```
+**make images** - Build the JDK image
 
 ## 项目配置
 
